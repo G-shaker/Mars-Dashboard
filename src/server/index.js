@@ -16,13 +16,16 @@ app.use('/', express.static(path.join(__dirname, '../public')))
 
 // example API call
 app.get('/apod', async (req, res) => {
+  console.log("getting image")
     try {
         let image = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${process.env.API_KEY}`)
             .then(res => res.json())
+        console.log(image)
         res.send({ image })
     } catch (err) {
         console.log('error:', err);
     }
 })
 
+//set up server
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
