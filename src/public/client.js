@@ -54,6 +54,7 @@ const App = (state) => {
 
 
             </section>
+            
         </main>
         <footer></footer>
     `
@@ -74,7 +75,6 @@ const Greeting = (name) => {
             <h1>Welcome, ${name}!</h1>
         `
     }
-
     return `
         <h1>Hello!</h1>
     `
@@ -121,8 +121,10 @@ const roverInfo = (info) => {
   console.log("printing info", info)
 
   return (`
-    <p> Helloooo </p>
-    <p> ${info.info2.name} </p>
+    <p> Rover Information </p>
+    <p> Launch date: ${info.info2.launch_date} </p>
+    <p> Landing date: ${info.info2.landing_date} </p>
+    <p> Status: ${info.info2.status} </p>
   `)
 }
 
